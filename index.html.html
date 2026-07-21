@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Hydrogen Workforce Requirements — Analytical Report</title>
+<style>
+:root {
+  --bg:#f5f7fa; --card:#ffffff; --text:#14202b; --muted:#5d6b78;
+  --line:#d9e0e7; --accent:#087f8c; --accent2:#0b5fa5;
+  --high:#b42318; --med:#b54708; --low:#027a48;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#10151a; --card:#182028; --text:#edf2f7; --muted:#aab6c2; --line:#32404d; --accent:#3cc6d4; --accent2:#62aaf2; }
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+main{max-width:1180px;margin:auto;padding:32px 20px 56px}
+header{padding:26px 28px;background:linear-gradient(135deg,var(--accent2),var(--accent));color:white;border-radius:18px}
+h1{margin:0 0 8px;font-size:clamp(28px,4vw,46px);line-height:1.1}
+header p{margin:0;max-width:850px;opacity:.95}
+section{margin-top:24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.metric{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.metric b{display:block;font-size:29px;color:var(--accent2)}
+.metric span{color:var(--muted);font-size:14px}
+h2{margin:0 0 14px;font-size:25px}
+h3{margin:0 0 8px}
+.summary li{margin:8px 0}
+.callout{border-left:5px solid var(--accent);padding:14px 16px;background:color-mix(in srgb,var(--accent) 10%,var(--card));border-radius:8px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:12px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{position:sticky;top:0;background:var(--card);color:var(--muted)}
+.tablewrap{overflow:auto;max-height:610px;border:1px solid var(--line);border-radius:12px}
+.badge{display:inline-block;padding:3px 9px;border-radius:999px;font-weight:700;font-size:12px;background:color-mix(in srgb,var(--accent2) 14%,transparent)}
+.veryhigh,.high{color:var(--high)} .medium{color:var(--med)} .low{color:var(--low)}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+select,input{padding:9px 11px;border-radius:9px;border:1px solid var(--line);background:var(--card);color:var(--text)}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.phase{border-top:5px solid var(--accent2)}
+.small{font-size:13px;color:var(--muted)}
+footer{margin-top:25px;color:var(--muted);font-size:13px}
+@media(max-width:850px){.grid,.timeline{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid,.timeline{grid-template-columns:1fr} header{padding:22px}}
+@media print{
+ body{background:white;color:black} main{max-width:none;padding:0} .controls{display:none}
+ .card,.metric{break-inside:avoid;box-shadow:none} header{background:#0b5fa5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>Hydrogen Workforce Requirements</h1>
+  <p>An analytical conversion of the IPHE hydrogen skills guidance into a decision-oriented workforce framework covering demand, skill augmentation, training interventions and implementation timing.</p>
+</header>
+
+<section>
+<h2>Executive Summary</h2>
+<div class="card summary">
+<ul>
+<li><b>The core challenge is workforce conversion, not the creation of entirely new professions.</b> Existing engineers, technicians, tradespeople and professionals need role-specific hydrogen augmentation.</li>
+<li><b>The most urgent bottleneck is likely to be technician, operator and safety capacity.</b> Demand shifts from engineering-heavy development toward technician-heavy operations as the sector industrialises.</li>
+<li><b>Workforce planning must follow the actual project pipeline.</b> Requirements differ by technology, lifecycle phase, domestic manufacturing content and infrastructure model.</li>
+<li><b>Training must combine immediate short courses with long-term qualification reform.</b> Practical workplace learning and tiered safety certification are critical.</li>
+</ul>
+</div>
+</section>
+
+<section class="grid">
+<div class="metric"><b>10</b><span>Priority workforce families mapped</span></div>
+<div class="metric"><b>4</b><span>Immediate high-priority capability areas: technicians, safety, policy, training systems</span></div>
+<div class="metric"><b>3</b><span>Required intervention layers: short courses, vocational pathways, formal curricula</span></div>
+<div class="metric"><b>1</b><span>Essential planning principle: align skills demand with projects and lifecycle phases</span></div>
+</section>
+
+<section>
+<div class="card">
+<h2>Decision Framework</h2>
+<p class="callout"><b>Recommended workforce strategy:</b> build broad foundation skills, identify transferable workers, add role-specific hydrogen competencies, and scale practical training ahead of project construction and operation.</p>
+</div>
+</section>
+
+<section>
+<div class="card">
+<h2>Workforce Priority Matrix</h2>
+<p class="small">The significance and augmentation labels are an analytical synthesis of the report—not measured employment forecasts. Use the filters to focus the matrix.</p>
+<div class="controls">
+<select id="timingFilter"><option value="">All timing</option><option>Immediate</option><option>Near term</option></select>
+<select id="demandFilter"><option value="">All demand levels</option><option>Very High</option><option>High</option><option>Medium</option></select>
+<input id="search" placeholder="Search workforce or skill">
+</div>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Workforce family</th><th>Lifecycle phase</th><th>Demand</th><th>Skill augmentation</th><th>Priority competencies</th><th>Primary intervention</th><th>Timing</th></tr></thead>
+<tbody id="matrixBody"></tbody>
+</table>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Lifecycle Shift in Workforce Demand</h2>
+<div class="timeline">
+<div class="card phase"><h3>1. Development</h3><p><b>Dominant roles:</b> policy, permitting, project development, engineering, finance and legal.</p><p class="small">Training focus: hydrogen fundamentals, standards, project design and commercial structures.</p></div>
+<div class="card phase"><h3>2. Construction & Commissioning</h3><p><b>Dominant roles:</b> engineers, construction trades, inspectors, commissioning teams and safety personnel.</p><p class="small">Training focus: equipment-specific skills, hazardous-area practices, welding, inspection and start-up.</p></div>
+<div class="card phase"><h3>3. Operations & Scale-up</h3><p><b>Dominant roles:</b> technicians, operators, maintenance workers, logistics and emergency response.</p><p class="small">Training focus: practical operations, preventive maintenance, leak detection and incident response.</p></div>
+</div>
+</section>
+
+<section>
+<div class="card">
+<h2>Recommended Implementation Roadmap</h2>
+<ol>
+<li><b>Establish a national hydrogen workforce baseline:</b> map existing occupations, qualifications, training providers and transferable labour pools.</li>
+<li><b>Link workforce estimates to project scenarios:</b> separate engineering, construction, commissioning and permanent operations requirements.</li>
+<li><b>Launch immediate conversion programmes:</b> short courses and micro-credentials for engineers, technicians, regulators and safety personnel.</li>
+<li><b>Create tiered hydrogen safety certification:</b> awareness, role-specific technical training and advanced emergency-response competency.</li>
+<li><b>Expand practical training capacity:</b> apprenticeships, pilot facilities, laboratories, simulation and equipment-vendor training.</li>
+<li><b>Embed hydrogen into formal education:</b> update engineering, TVET and professional curricula once sustained demand is validated.</li>
+<li><b>Review annually:</b> update workforce assumptions for project delays, FID status, technology changes, automation and local-content plans.</li>
+</ol>
+</div>
+</section>
+
+<section>
+<div class="card">
+<h2>Key Analytical Caveats</h2>
+<ul>
+<li>The report does not provide a universal job multiplier or a single workforce number applicable to every country.</li>
+<li>International findings must be adapted to national industrial capabilities, project maturity, technologies and labour-market conditions.</li>
+<li>The French engineering-to-technician transition is illustrative, not a universal ratio.</li>
+<li>A country-specific assessment is required before setting training intake targets or funding commitments.</li>
+</ul>
+</div>
+</section>
+
+<footer>
+Source: IPHE H2Skills Task Force, <i>Skills for the Hydrogen Economy — Part 1: Hydrogen Skills Needs Assessments and Workforce Estimation</i>, September 2025. Analytical classifications in this report are derived from the source conclusions and are not independent empirical measurements.
+</footer>
+</main>
+
+<script>
+const rows = [{"family": "Engineering & Design", "phase": "Planning / FEED / Design", "demand": "High", "augmentation": "Medium", "competencies": "Process design; electrolyser integration; grid connection; materials compatibility", "intervention": "Upskill existing engineers", "timing": "Immediate"}, {"family": "Technicians & Operators", "phase": "Commissioning / Operations / Maintenance", "demand": "Very High", "augmentation": "High", "competencies": "Equipment operation; leak detection; maintenance; emergency shutdown", "intervention": "TVET pathways + practical training", "timing": "Immediate"}, {"family": "Construction Trades", "phase": "Construction / Installation", "demand": "High", "augmentation": "Medium", "competencies": "Hydrogen-compatible piping; welding; hazardous-area installation; inspection", "intervention": "Trade certification + site training", "timing": "Near term"}, {"family": "Safety & Emergency Response", "phase": "All project phases", "demand": "Very High", "augmentation": "High", "competencies": "Hydrogen behaviour; ignition risk; ventilation; incident response", "intervention": "Tiered mandatory safety certification", "timing": "Immediate"}, {"family": "Policy & Regulation", "phase": "Strategy / Permitting / Oversight", "demand": "High", "augmentation": "High", "competencies": "Hydrogen policy; codes; standards; licensing; compliance", "intervention": "Specialist regulator and policymaker training", "timing": "Immediate"}, {"family": "Commercial, Finance & Legal", "phase": "Development / Contracting / Investment", "demand": "Medium", "augmentation": "High", "competencies": "Project economics; risk allocation; contracts; insurance; offtake", "intervention": "Professional short courses", "timing": "Near term"}, {"family": "Renewable Power & Grid", "phase": "Production / Infrastructure", "demand": "High", "augmentation": "Medium", "competencies": "Renewable integration; power electronics; grid systems; controls", "intervention": "Upskill electrical workforce", "timing": "Immediate"}, {"family": "Ports, Logistics & Export", "phase": "Storage / Transport / Export", "demand": "High", "augmentation": "High", "competencies": "Ammonia and hydrogen handling; loading; storage; shipping safety", "intervention": "Port-based competency programmes", "timing": "Near term"}, {"family": "Education & Training", "phase": "Workforce pipeline", "demand": "High", "augmentation": "High", "competencies": "Curriculum design; trainer capability; accreditation; workplace learning", "intervention": "Train-the-trainer + curriculum reform", "timing": "Immediate"}, {"family": "Environmental & Sustainability", "phase": "Permitting / Monitoring / Certification", "demand": "Medium", "augmentation": "Medium", "competencies": "Impact assessment; emissions accounting; certification; water impacts", "intervention": "Add hydrogen modules to existing qualifications", "timing": "Near term"}];
+const body = document.getElementById('matrixBody');
+function cls(v){return v.toLowerCase().replaceAll(' ','')}
+function render(){
+ const t=document.getElementById('timingFilter').value;
+ const d=document.getElementById('demandFilter').value;
+ const q=document.getElementById('search').value.toLowerCase();
+ body.innerHTML='';
+ rows.filter(r=>(!t||r.timing===t)&&(!d||r.demand===d)&&(!q||JSON.stringify(r).toLowerCase().includes(q)))
+ .forEach(r=>{
+   const tr=document.createElement('tr');
+   tr.innerHTML=`<td><b>${r.family}</b></td><td>${r.phase}</td><td class="${cls(r.demand)}"><b>${r.demand}</b></td><td><span class="badge">${r.augmentation}</span></td><td>${r.competencies}</td><td>${r.intervention}</td><td>${r.timing}</td>`;
+   body.appendChild(tr);
+ });
+}
+['timingFilter','demandFilter','search'].forEach(id=>document.getElementById(id).addEventListener('input',render));
+render();
+</script>
+</body>
+</html>
